@@ -1,0 +1,9 @@
+Django==1.7.6
+django-appconf==1.0.1
+django-facebook==6.0.2
+django-imagekit==3.2.6
+django-model-utils==2.2
+pilkit==1.1.12
+Pillow==2.7.0
+six==1.9.0
+Unidecode==0.4.17
