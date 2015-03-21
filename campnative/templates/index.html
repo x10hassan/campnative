@@ -1,0 +1,254 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/quickform/component.css' %}" />
+{% endblock head %}
+
+{% block body_class %}modern transparent-header-w t-dark-w {% endblock body_class %}
+
+{% block content %}
+<header id="header" class="horizontal-w sm-rgt-mn">
+    <div  class="container">
+        <div class="col-md-3 col-sm-3 logo-wrap">
+            <div class="logo">
+                <a href="index.html"><img src="{% static 'images/homepage/homepagelogo.png' %}" width="130" id="img-logo-w1" alt="logo" class="img-logo-w1"></a>
+                <a href="index.html"><img src="{% static 'images/homepage/homepagelogo.png' %}" width="130" id="img-logo-w2" alt="logo" class="img-logo-w2"></a>
+                <span class="logo-sticky">
+                    <a href="index.html"><img src="{% static 'images/homepage/logo_sticky.png' %}" width="60" id="img-logo-w3" alt="logo" class="img-logo-w3"></a>
+                </span>
+            </div> <!-- end logo -->
+        </div> <!-- end col-md-3 -->
+        <nav id="nav-wrap" class="nav-wrap1 col-md-9 col-sm-9">
+            <div class="container">
+                <ul id="nav">
+                    <li class="current">
+                        <a href="#" data-description="start here">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" data-description="places">Explore</a>
+                    </li> <!-- end blogs -->
+                    <li>
+                        <a href="#" data-description="logbook">Log Book</a>
+                    </li> <!-- end blogs -->
+                    <li>
+                        <a href="#" data-description="about">About</a>
+                    </li> <!-- end blogs -->
+                    <li>
+                        <a href="#" data-description="contact">Contact</a>
+                    </li> <!-- end blogs -->
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-default bordered-bot cd-signin">Login</button>
+                        <button type="button" class="btn btn-default cd-signup">Join</button>
+                    </div>
+                </ul> <!-- end #nav -->
+            </div>
+        </nav> <!-- end navigation -->
+    </div> <!-- end container -->
+</header> <!-- end header -->
+
+
+<!-- Start Page Content -->
+<section class="max-hero">
+    <div class="slides-control">
+        <div class="slides-container sparallax">
+            <div class="slide1 slide-image" style="background-image: url('{% static "images/homepage/hero_image.jpeg" %}')"></div>
+        </div>
+    </div> <!-- end slides-control -->
+    <nav class="slides-navigation"><a href="#" class="next"></a><a href="#" class="prev"></a></nav>
+    <div class="slides-content">
+        <div class="container">
+            <div class="col-sm-12">
+                <div class="main clearfix">
+                    <form id="nl-form" class="nl-form">
+                        I feel to do
+                        <select>
+                            <option value="1" selected>any thing</option>
+                            <option value="2">biking</option>
+                            <option value="3">boating</option>
+                            <option value="4">backpacking</option>
+                            <option value="2">attractions</option>
+                        </select>
+                        <br />with
+                        <select>
+                            <option value="1" selected>any amenity</option>
+                            <option value="2">laundry facilities</option>
+                            <option value="3">RV supplies</option>
+                            <option value="4">disc golf</option>
+                            <option value="2">swimming pool</option>
+
+                            Attractions  Backpacking  Beach  Biking  Boating  Camping with Kids  Cooking  Dive Trip
+                        </select>
+                        <br />
+                        in <input type="text" value="" placeholder="any city" data-subline="For example: <em>San Diego</em> or <em>New York</em>"/>
+                        <div class="nl-submit-wrap">
+                            <button class="nl-submit" type="submit">Find a CampGround</button>
+                        </div>
+                        <div class="nl-overlay"></div>
+                    </form>
+                </div>
+            </div> <!-- end col-sm-12 -->
+        </div> <!-- end container -->
+    </div> <!-- end slides-content -->
+</section> <!-- end slider -->
+
+<section class="container">
+    <div class="col-sm-12">
+        <hr class="vertical-space1">
+        <div class="max-title3">
+            <h2>How it Works? - Process</h2>
+        </div>
+        <p class="slog">Camp Native is the best way to find and book campsites. </br>People use Camp Native to find amazing campsites from all around the world.</br> Ditch the walls and get outdoors.
+        </p>
+        <hr class="vertical-space4">
+        <div class="our-process proc5level">
+            <div class="col-sm-12">
+                <div class="our-process-item">
+                    <i class="li_bulb"></i>
+                    <div class="our-process-content">
+                        <h5>IDEA</h5>
+                        <p>skateboard locavore</p>
+                    </div>
+                </div> <!-- end our-process-item -->
+                <div class="our-process-item">
+                    <i class="li_calendar"></i>
+                    <div class="our-process-content">
+                        <h5>PLAN</h5>
+                        <p>skateboard locavore</p>
+                    </div>
+                </div> <!-- end our-process-item -->
+                <div class="our-process-item">
+                    <i class="li_settings"></i>
+                    <div class="our-process-content">
+                        <h5>SEARCH</h5>
+                        <p>skateboard locavore</p>
+                    </div>
+                </div> <!-- end our-process-item -->
+                <div class="our-process-item">
+                    <i class="li_lab"></i>
+                    <div class="our-process-content">
+                        <h5>FINALIZE</h5>
+                        <p>skateboard locavore</p>
+                    </div>
+                </div> <!-- end our-process-item -->
+                <div class="our-process-item">
+                    <i class="li_paperplane"></i>
+                    <div class="our-process-content">
+                        <h5>CAMP</h5>
+                        <p>skateboard locavore</p>
+                    </div>
+                </div> <!-- end our-process-item -->
+            </div> <!-- end col-sm-12 -->
+        </div> <!-- end our-process proc5level -->
+</section> <!-- end our-process-wrap container -->
+<section class="container">
+    <div class="col-sm-12 aligncenter">
+        <hr class="vertical-space3">
+        <div class="max-title2">
+            <h2>Featured CampGround</h2>
+        </div>
+        <p class="slog">I are a creative People with passion to help campers.<br>
+            I think it’s good business to do good. We’re hard to be good.<br>
+            more come from a stable quality.
+        </p>
+        <div class="magic-link"><a href="blog.html">SEE ALL POSTS</a></div>
+        <hr class="vertical-space3">
+    </div>
+    <div class="col-sm-4">
+        <div class="teaser-box1">
+            <div class="image-wrapper">
+                <div class="iconbg-w tb1"><i class="fa-bicycle"></i></div>
+                <img src="{% static 'images/homes/640x390-1.jpg' %}" alt="">
+            </div>
+            <div class="content-wrapper">
+                <a href="#">
+                    <h5>1483 Carroll St Brooklyn, New York 11213</h5>
+                    <h4>Bnei Menachem</h4>
+                </a>
+                <p>Assertively streamline high-quality portals without business technology. Compellingly expedite cost effective niches rather than principle-centered imperatives. Compellingly scale fully.</p>
+            </div>
+        </div>
+        <hr class="vertical-space4">
+    </div> <!-- end col-sm-4 -->
+    <div class="col-sm-4">
+        <div class="teaser-box1">
+            <div class="image-wrapper">
+                <div class="iconbg-w tb2"><i class="fa-sun-o"></i></div>
+                <img src="{% static 'images/homes/640x390-1.jpg' %}" alt="">
+            </div>
+            <div class="content-wrapper">
+                <a href="#">
+                    <h5>1375 Broadway New York, New York 10018</h5>
+                    <h4>Aveer Day Camp</h4>
+                </a>
+                <p>Continually reinvent technically sound synergy through open-source value. Progressively revolutionize focused collaboration and idea-sharing with transparent platforms. Intrinsicly customize.</p>
+            </div>
+        </div>
+        <hr class="vertical-space4">
+    </div> <!-- end col-sm-4 -->
+    <div class="col-sm-4">
+        <div class="teaser-box1">
+            <div class="image-wrapper">
+                <div class="iconbg-w tb3"><i class="li_t-shirt"></i></div>
+                <img src="{% static 'images/homes/640x390-1.jpg' %}" alt="">
+            </div>
+            <div class="content-wrapper">
+                <a href="#">
+                    <h5>1375 Broadway New York, New York 10018</h5>
+                    <h4>Phuket Province</h4>
+                </a>
+                <p>Globally repurpose stand-alone experiences rather than front-end ROI. Interactively maintain proactive expertise vis-a-vis reliable platforms. Dramatically pontificate cross-media niches.</p>
+            </div>
+        </div>
+        <hr class="vertical-space4">
+    </div> <!-- end col-sm-4 -->
+</section> <!-- end recent posts -->
+
+<section class="blox dark blox4">
+    <div class="container">
+        <div class="col-sm-12">
+            <hr class="vertical-space3">
+            <div class="col-sm-8">
+                <h3 class="lintex">Are you a Camp Ground Owner?</h3>
+            </div>
+            <div class="col-sm-4">
+                <a href="#" class="button blue  large bordered-bot " target="_self">Claim your CampGround</a>
+            </div>
+            <hr class="vertical-space2">
+        </div> <!-- end col-sm-12 -->
+    </div> <!-- end container -->
+</section> <!-- end blox -->
+
+<section class="blox dark blox6">
+    <div class="container">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-11">
+            <div class="col-sm-3">
+                <article class="icon-box">
+                    <i class="li_clock"></i>
+                    <h4>1. Select your CampGround</h4>
+                    <p>Camp Owner can Search & Claim them</p>
+                </article>
+            </div> <!-- end col-sm-3 -->
+            <div class="col-sm-3">
+                <article class="icon-box">
+                    <i class="fa-sliders"></i>
+                    <h4>2. Fillout Information</h4>
+                    <p>It’s easy, even for non-techies.</p>
+                </article>
+            </div> <!-- end col-sm-3 -->
+            <div class="col-sm-3">
+                <article class="icon-box">
+                    <i class="fa-sun-o"></i>
+                    <h4>3. Spread & Recives</h4>
+                    <p>It makes a big difference.</p>
+                </article>
+            </div> <!-- end col-sm-3 -->
+            <div class="col-sm-3 fix-btn-mrg">
+                <a href="#" class="button skyblue  large  ">GET STARTED</a>
+            </div>
+        </div> <!-- end col-sm-11 -->
+    </div> <!-- end container -->
+</section> <!-- end blox -->
+
+{% endblock content %}
