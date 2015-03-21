@@ -1,0 +1,195 @@
+{% load static %}
+{% get_media_prefix as MEDIA_PREFIX %}
+<!DOCTYPE html>
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <head>
+
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta charset="utf-8">
+        <title>CampNative - CampGround</title>
+        <meta name="description" content="Extent - another WordPress theme">
+        <meta name="author" content="Webnus">
+
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <!-- CSS
+        ================================================== -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css"  media="all">
+
+        <!-- <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,400italic,400,300,600,700,900|Varela|Arapey:400,400italic' rel="stylesheet" type='text/css' -->
+
+        <!-- JS
+        ================================================== -->
+        <script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'layerslider/js/greensock.js' %}" type="text/javascript"></script>
+        <!--[if lt IE 9]>
+        <script src="{% static 'js/modernizr.custom.11889.js' %}" type="text/javascript"></script>
+        <script src="{% static 'js/respond.js' %}" type="text/javascript"></script>
+        <![endif]-->
+        <!-- HTML5 Shiv events (end)-->
+        <!-- MEGA MENU -->
+
+        <!-- Favicons
+        ================================================== -->
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+
+    </head>
+
+    <body class="campground">
+
+        <!-- Primary Page Layout
+        ================================================== -->
+        <div id="wrap">
+
+            <header id="header" class="horizontal-w  sm-rgt-mn  ">
+                <div class="container">
+                    <div class="col-md-3 col-sm-3 logo-wrap">
+                        <div class="logo">
+                            <a href="index.html"><img src="{% static 'images/homepage/reg-logo.png' %}" width="130" id="img-logo-w1" alt="logo" class="img-logo-w1"></a>
+                            <a href="index.html"><img src="{% static 'images/homepage/reg-logo.png' %}" width="130" id="img-logo-w2" alt="logo" class="img-logo-w2"></a>
+                            <span class="logo-sticky"><a href="index.html"><img src="{% static 'images/homepage/logo_sticky.png' %}" width="60" id="img-logo-w3" alt="logo" class="img-logo-w3"></a></span>
+                        </div> <!-- end logo -->
+                    </div> <!-- end col-md-3 -->
+                    <nav id="nav-wrap" class="nav-wrap1 col-md-9 col-sm-9"><div id="menu-icon"><i class="fa-navicon"></i> <span>Menu - </span><span class="mn-clk">Navigation</span><span class="mn-ext1"></span><span class="mn-ext2"></span><span class="mn-ext3"></span></div>
+                        <div class="container">
+                            <ul id="nav">
+                                <li class="current">
+                                    <a href="#" data-description="start here"><i class="fa-file-text"></i>Home</a>
+
+                                </li>
+                                <li>
+                                    <a href="#" data-description="places"><i class="fa-search"></i>Explore</a>
+                                </li> <!-- end blogs -->
+                                <li>
+                                    <a href="#" data-description="logbook"><i class="fa-book"></i>Log Book</a>
+                                </li> <!-- end blogs -->
+                                <li>
+                                    <a href="#" data-description="about"><i class="fa-users"></i>About</a>
+                                </li> <!-- end blogs -->
+                                <li>
+                                    <a href="#" data-description="contact"><i class="fa-envelope-o"></i>Contact</a>
+                                </li> <!-- end blogs -->
+                            </ul> <!-- end #nav --><!-- end #nav -->
+                        </div>
+                    </nav> <!-- end navigation -->
+                </div><!-- end container -->
+                <hr class="vertical-space">
+                <nav id="nav-wrap" class="nav-wrap2"><div id="menu-icon"><i class="fa-navicon"></i> <span>Menu - </span><span class="mn-clk">Navigation</span><span class="mn-ext1"></span><span class="mn-ext2"></span><span class="mn-ext3"></span></div>
+                    <div class="container">
+                        <div class="col-md-8 col-sm-6">
+                            <ul id="nav">
+                                <li class="current">
+                                    <a href="#ground" data-description="Sneak Peak">CampGround</a>
+                                </li>
+                                <li>
+                                    <a href="#photos" data-description="How it looks">Pictures</a>
+                                </li> <!-- end blogs -->
+
+                                <li>
+                                    <a href="#sites" data-description="3 Campsites">CampSites</a>
+                                </li> <!-- end blogs -->
+                                <li>
+                                    <a href="#reviews" data-description="What they say">Reviews</a>
+                                </li> <!-- end blogs -->
+                            </ul> <!-- end #nav -->
+                        </div>
+                        <div class="col-md-4 col-sm-4 cta-claim">
+                            <a href="#" class="button skyblue large">Claim your Campground</a>
+                        </div>
+                    </div>
+                </nav> <!-- nav-wrap -->
+            </header>
+
+
+            {% block content %}
+            {% endblock content %}
+
+
+            <!--  End of the Page Content
+            ================================================== -->
+            <section class="blox dark blox4">
+                <hr class="vertical-space4">
+                <div class="container">
+                    <div class="col-sm-12">
+                        <div class="col-sm-3 brdr-r1">
+                            <hr class="vertical-space2">
+                            <img width="237" height="61" src="{% static 'images/homepage/homepagelogo1x.png' %}" alt="logo-drk">
+                            <hr class="vertical-space1">
+                            <hr class="vertical-space">
+                        </div> <!-- end col-sm-3 -->
+                        <div class="col-sm-3 brdr-r1">
+                            <article class="icon-box3">
+                                <i class="fa-anchor"></i>
+                                <h4></h4>
+                            </article>
+                            <div class="aligncenter custom-footer-menu">
+                                <a href="#">About</a>
+                                <a href="#">Jobs</a>
+                                <a href="#">Partners</a>
+                                <a href="#">Press</a>
+
+                            </div>
+                            <hr class="vertical-space1">
+                        </div> <!-- end col-sm-3 -->
+                        <div class="col-sm-3 brdr-r1">
+                            <article class="icon-box3">
+                                <i class="fa-phone"></i>
+                                <h4>Let's Connect</h4>
+                            </article>
+                            <p class="aligncenter">Call us at <strong>(123) 456578</strong></p>
+                            <p class="aligncenter">and email us:<br>
+                                <strong>info@camptnative.com</strong>
+                            </p>
+                            <hr class="vertical-space1">
+                        </div> <!-- end col-sm-3 -->
+                        <div class="col-md-3">
+                            <div class="widget">
+                                <article class="icon-box3">
+                                    <i class="fa-share-square"></i>
+                                    <h4>Let's get Social</h4>
+                                </article>
+                                <div class="socialfollow">
+                                    <a href="#" class="twitter"><i class="fa-twitter"></i></a><a href="#" class="facebook"><i class="fa-facebook"></i></a><a href="#" class="dribble"><i class="fa-dribbble"></i></a><a href="#" class="google"><i class="fa-google"></i></a><a href="#" class="instagram"><i class="fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end col-sm-12 -->
+                </div> <!-- end container -->
+            </section>
+
+            <span id="scroll-top"><a class="scrollup"><i class="fa-chevron-up"></i></a></span>
+
+        </div> <!-- end Wrap -->
+
+        <!-- End Document
+        ================================================== -->
+
+        <!-- JS
+        ================================================== -->
+        <script type="text/javascript" src="{% static 'js/jquery.plugins.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.masonry.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/mediaelement-and-player.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/isotope.js' %}"></script>
+        <script src="{% static 'js/sticky-custom.js' %}" type="text/javascript"></script>
+        <script type="text/javascript" src="{% static 'js/campnative-custom.js' %}"></script>
+        <script src="{% static 'js/modernizr.custom.js' %}"></script>
+        <script src="{% static 'js/cbpFWTabs.js' %}"></script>
+        <script>
+         (function() {
+
+             [].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+                 new CBPFWTabs( el );
+             });
+
+         })();
+        </script>
+
+
+
+    </body>
+</html>
