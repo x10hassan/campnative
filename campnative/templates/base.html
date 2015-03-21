@@ -34,13 +34,15 @@
         <!-- HTML5 Shiv events (end)-->
         <!-- MEGA MENU -->
 
+        {% block head %}
+        {% endblock head %}
         <!-- Favicons
         ================================================== -->
         <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
 
     </head>
 
-    <body class="campground">
+    <body class="{% block body_class %}{% endblock body_class %}">
 
         <!-- Primary Page Layout
         ================================================== -->
