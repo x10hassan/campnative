@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="campgroundhero blox2">
+    <div class="container">
+        <div class="col-sm-12">
+            <div class="col-sm-6"></div>
+            <div class="col-sm-6 aligncenter">
+
+                <!-- something can go over the featured image -->
+
+            </div> <!-- end col-sm-6 -->
+        </div> <!-- end col-sm-12 -->
+    </div> <!-- end container -->
+</section>
+
+<section id="ground" id="headline">
+    <div class="container">
+        <div class="col-wks-1">
+            <div class="works-item-date-box">
+                <div class="container">
+                    <!-- Rating System
+                    ================================================== -->
+                    <fieldset class="rating">
+                        <input type="radio" id="star5" name="rating" value="5"><label class="full" for="star5" title="Awesome - 5 stars"></label>
+                        <input type="radio" id="star4half" name="rating" value="4 and a half"><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                        <input type="radio" id="star4" name="rating" value="4"><label class="full" for="star4" title="Pretty good - 4 stars"></label>
+                        <input type="radio" id="star3half" name="rating" value="3 and a half"><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                        <input type="radio" id="star3" name="rating" value="3"><label class="full" for="star3" title="Meh - 3 stars"></label>
+                        <input type="radio" id="star2half" name="rating" value="2 and a half"><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                        <input type="radio" id="star2" name="rating" value="2"><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+                        <input type="radio" id="star1half" name="rating" value="1 and a half"><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                        <input type="radio" id="star1" name="rating" value="1"><label class="full" for="star1" title="Sucks big time - 1 star"></label>
+                        <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                    </fieldset>
+                </div>
+            </div>
+        </div> <!-- end col-wks-1 -->
+        <div class="col-wks-2 aligncenter">
+            <h1 class="portfolio-item-title">{{ campground.name }}</h1>
+        </div> <!-- end col-wks-2 -->
+        <div class="col-wks-3">
+            <div class="works-item-cat-box">
+                <span class="wrks-itm-cat"> <a href="#"><i class="fa fa-plus-circle"></i> I've been here</a></span> </br><span class="wrks-itm-cat"> <a href="#"><i class="fa fa-plus-circle"></i> add to dream list</a></span>
+            </div>
+        </div> <!-- end col-wks-3 -->
+    </div>
+</section> <!-- end headline -->
+
+<section class="blox blox1">
+    <div class="container">
+        <div class="col-sm-12">
+            <hr class="vertical-space">
+            <article class="icon-box7">
+                <i class="fa-map-marker"></i>
+                <h4>{{ campground.address }}, {{ campground.city }}, {{ campground.state }}, {{ campground.state.country }}</h4>
+            </article>
+            <div class="w-google-map">
+                <iframe height="490" src=""></iframe>
+            </div>
+            <hr class="vertical-space1">
+        </div> <!-- end col-sm-12 -->
+    </div> <!-- end container -->
+</section> <!-- end blox -->
+
+
+<section class="container">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <div class="col-sm-5">
+            <div class="max-title">
+                <h2>Amenties</h2>
+            </div> <!-- end max-title2 -->
+            <ul class="arrow">
+                {% for amenity in campground.campgroundamnity_set.all %}
+                <li class="arrow-item">
+                    {{ amenity.amenity.name }}
+                    <span><i class="fa fa-{{ amenity.status }}"></i></span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div> <!-- end col-sm-5 -->
+        <div class="col-sm-2"></div>
+        <div class="col-sm-5">
+            <div class="max-title">
+                <h2>Activites</h2>
+            </div> <!-- end max-title2 -->
+            <ul class="star">
+                {% for activity in campground.campgroundactivity_set.all %}
+                <li class="star-item">{{ activity.activity.name }}<span>{{ activity.status }}</span></li>
+                {% endfor %}
+            </ul>
+        </div> <!-- end col-sm-5 -->
+
+    </div> <!-- end col-sm-6 -->
+    <div class="col-sm-3"></div>
+</section>
+
+<section id="photos" class="blox blox1">
+    <div class="container">
+        <div class="col-sm-12">
+            <section class="latest-works col3-w with-space-w">
+                <div class="max-title5">
+                    <h2>Photo Gallery</h2>
+                </div> <!-- end max-title2 -->
+
+                <div class="portfolio  isotope" style="position: relative; overflow: hidden; height: 576px;">
+                    {% for photo in campground.photogallery_set.all %}
+                    <figure class="portfolio-item  solid   isotope-item" style="position: absolute; left: 0px; top: 0px; -webkit-transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); opacity: 1;">
+                        <div class="img-item">
+                            <img src="{{ photo.image.url }}" alt="{{ photo.description }}" class="Full portfolio_full ">
+                            <div class="zoomex2">
+                                <span>{{ photo.image_date }}</span>
+                                <h6><a href="portfolio-item.html"><a href="{{ photo.image.url }}" class="prettyPhoto zoomlink1"><i class="fa-search fa-3x"></i></a></a></h6>
+                            </div>
+                        </div>
+                    </figure> <!-- end gallery-item -->
+                    {% endfor %}
+                </div> <!-- end portfolio  isotope -->
+            </section> <!-- end latest-photos -->
+            <hr id="sites" class="vertical-space2">
+        </div> <!-- end col-sm-12 -->
+    </div>
+</section>
+
+<!-- start of the campsites -->
+<section class="container">
+    <div class="max-title5">
+        <h2>Campsites of this CampGround</h2>
+    </div>
+    {% for campsite in campground.campsite_set.all %}
+    <div class="col-sm-4">
+        <div class="teaser-box1">
+            <div class="image-wrapper">
+                <div class="iconbg-w tb2"><i class="fa-sun-o"></i></div>
+                <img src="{{ campsite.image.url }}" alt="">
+            </div>
+            <div class="content-wrapper">
+                <a href="#">
+                    <h5>{{ campsite.address }}</h5>
+                    <h4>{{ campsite.name }}</h4>
+                </a>
+                <p>{{ campsite.description }}</p>
+                <hr>
+                <div class="container">
+                    <!-- Rating System
+                    ================================================== -->
+                    <fieldset class="rating">
+                        <input type="radio" id="star5" name="rating" value="5"><label class="full" for="star5" title="Awesome - 5 stars"></label>
+                        <input type="radio" id="star4half" name="rating" value="4 and a half"><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                        <input type="radio" id="star4" name="rating" value="4"><label class="full" for="star4" title="Pretty good - 4 stars"></label>
+                        <input type="radio" id="star3half" name="rating" value="3 and a half"><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                        <input type="radio" id="star3" name="rating" value="3"><label class="full" for="star3" title="Meh - 3 stars"></label>
+                        <input type="radio" id="star2half" name="rating" value="2 and a half"><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                        <input type="radio" id="star2" name="rating" value="2"><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+                        <input type="radio" id="star1half" name="rating" value="1 and a half"><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                        <input type="radio" id="star1" name="rating" value="1"><label class="full" for="star1" title="Sucks big time - 1 star"></label>
+                        <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <hr class="vertical-space4">
+    </div> <!-- end col-sm-4 -->
+    {% endfor %}
+
+    <hr class="vertical-space4">
+</section>  <!-- end container -->
+
+
+
+<section id="reviews" class="blox blox3">
+    <div class="container">
+        <div class="col-sm-12">
+            <hr class="vertical-space3">
+            <div class="max-title5">
+                <h2>What other Natives are Say</h2>
+            </div>
+            <div class="testimonials-slider-w flexslider">
+                <ul class="slides">
+                    {% for testimonial in campground.campgroundreview_set.all %}
+                    <li style="width: 100%; float: left; margin-right: -100%; position: relative; display: list-item;" class="flex-active-slide">
+                        <div class="testimonial">
+                            <div class="testimonial-content">
+                                <h4><q>{{ testimonial.text }}</q></h4>
+                                <div class="testimonial-arrow"></div>
+                            </div>
+                            <div class="testimonial-brand">
+                                <img src="" alt="{{ testimonial.user.user.get_full_name }}">
+                                <h5><strong>{{ testimonial.user.user.get_full_name }}</strong><br>
+                                    <em>{{ testimonial.user.user.groups.all }}</em>
+                                </h5>
+                            </div>
+                        </div> <!-- end testimonial -->
+                    </li>
+                    {% endfor %}
+                </ul> <!-- end slides -->
+                <ol class="flex-control-nav flex-control-paging">
+                    <li><a class="flex-active">1</a></li>
+                </ol>
+                <ul class="flex-direction-nav">
+                    <li><a class="flex-prev" href="#"><i class="fa-chevron-left"></i><span>Previous</span></a></li>
+                    <li><a class="flex-next" href="#"><i class="fa-chevron-right"></i><span>Next</span></a></li>
+                </ul>
+            </div> <!-- end testimonials-slider-w -->
+            <hr class="vertical-space3">
+        </div> <!-- end col-sm-12 -->
+    </div> <!-- end container -->
+</section>
+{% endblock content %}
