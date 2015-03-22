@@ -4,11 +4,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
 
+from campnative.index_page import IndexPage
+
 
 urlpatterns = patterns(
     '',
     url(r'^admin/', include(admin.site.urls)),
-    (r'^$', TemplateView.as_view(template_name="index.html")),
+    (r'^$', IndexPage.as_view()),
     url('', include('social.apps.django_app.urls', namespace='social')),
     url(r'^campground/', include('campground.urls')),
 )

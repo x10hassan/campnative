@@ -43,14 +43,61 @@
     </head>
 
     <body class="{% block body_class %}{% endblock body_class %}">
-
         <!-- Primary Page Layout
         ================================================== -->
         <div id="wrap">
+            <header id="header" class="horizontal-w sm-rgt-mn">
+                <div  class="container">
+                    <div class="col-md-3 col-sm-3 logo-wrap">
+                        <div class="logo">
+                            {% if request.get_full_path == '/' %}
+                            <a href="index.html"><img src="{% static 'images/homepage/homepagelogo.png' %}" width="130" id="img-logo-w1" alt="logo" class="img-logo-w1"></a>
+                            <a href="index.html"><img src="{% static 'images/homepage/homepagelogo.png' %}" width="130" id="img-logo-w2" alt="logo" class="img-logo-w2"></a>
+                            {% else %}
+                            <a href="index.html"><img src="{% static 'images/homepage/reg-logo.png' %}" width="130" id="img-logo-w1" alt="logo" class="img-logo-w1"></a>
+                            <a href="index.html"><img src="{% static 'images/homepage/reg-logo.png' %}" width="130" id="img-logo-w2" alt="logo" class="img-logo-w2"></a>
+                            {% endif %}
+                            <span class="logo-sticky">
+                                <a href="index.html"><img src="{% static 'images/homepage/logo_sticky.png' %}" width="60" id="img-logo-w3" alt="logo" class="img-logo-w3"></a>
+                            </span>
+                        </div> <!-- end logo -->
+                    </div> <!-- end col-md-3 -->
+                    <nav id="nav-wrap" class="nav-wrap1 col-md-9 col-sm-9">
+                        <div class="container">
+                            <ul id="nav">
+                                <li class="current">
+                                    <a href="#" data-description="start here">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#" data-description="places">Explore</a>
+                                </li> <!-- end blogs -->
+                                <li>
+                                    <a href="#" data-description="logbook">Log Book</a>
+                                </li> <!-- end blogs -->
+                                <li>
+                                    <a href="#" data-description="about">About</a>
+                                </li> <!-- end blogs -->
+                                <li>
+                                    <a href="#" data-description="contact">Contact</a>
+                                </li> <!-- end blogs -->
+                                <li>
+                                    <div class="btn-group" role="group" aria-label="...">
+                                        <button type="button" class="btn btn-default bordered-bot cd-signin">Login</button>
+                                        <button type="button" class="btn btn-default cd-signup">Join</button>
+                                    </div>
+                                </li>
+                            </ul> <!-- end #nav -->
+                        </div>
+                    </nav> <!-- end navigation -->
+                </div> <!-- end container -->
+
+                {% block nav %}
+                {% endblock nav %}
+
+            </header> <!-- end header -->
 
             {% block content %}
             {% endblock content %}
-
 
             <!--  End of the Page Content
             ================================================== -->
