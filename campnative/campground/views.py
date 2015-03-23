@@ -1,12 +1,16 @@
+from django.http import Http404
 from django.views import generic
 from django import forms
 from django.forms import ModelForm
+from django.db.models import Q
 
 from campground.models import Campground, Amenity, Activity
 from locations.models import State
 
 
 class ExploreForm(ModelForm):
+    name = forms.CharField(required=False)
+
     class Meta:
         model = Campground
         fields = ['name', 'activities', 'amenities', 'city', 'state']
@@ -27,31 +31,10 @@ class CampgroundView(generic.DetailView):
     model = Campground
 
 
-class ExploreView(generic.edit.ProcessFormView, generic.ListView):
+class ExploreView(generic.edit.FormView):
     template_name = 'campground/explore.html'
-    model = Campground
     form_class = ExploreForm
-
-    def get_form_class(self):
-        return ExploreForm
-
-    def get_queryset(self):
-        import ipdb; ipdb.set_trace()
-        query = {
-            'name__icontains': self.kwargs.get('name', None),
-            'state__name__icontains': self.kwargs.get('state', None),
-            'city__name__icontains': self.kwargs.get('city', None),
-        }
-
-        # try:
-        #     name = self.kwargs['name']
-        # except:
-        #     name = ''
-        # if (name != ''):
-        #     object_list = self.model.objects.filter(name__icontains=name)
-        # else:
-        #     object_list = self.model.objects.all()
-        # return object_list
+    success_url = '/'
 
     def get_context_data(self, **kwargs):
         context = super(ExploreView, self).get_context_data(**kwargs)
@@ -59,7 +42,24 @@ class ExploreView(generic.edit.ProcessFormView, generic.ListView):
             'states': State.objects.all(),
             'activities': Activity.objects.all(),
             'amenities': Amenity.objects.all(),
-            'form': self.form_class
+            'campgrounds': getattr(self, 'campgrounds', None)
         })
-
+fortunately
         return context
+
+    def form_valid(self, form):
+        query = [
+            Q(name__icontains=form.cleaned_data['name']) if 'name' in form.cleaned_data and form.cleaned_data['name'] else None,
+            Q(state__name__icontains=form.cleaned_data['state']) if 'state' in form.cleaned_data and form.cleaned_data['state'] else None,
+            Q(city__name__icontains=form.cleaned_data['city']) if 'city' in form.cleaned_data and form.cleaned_data['city'] else None
+        ]
+
+        for amenity in form.cleaned_data['amenities']:
+            query.append(Q(amenities__name=amenity))
+
+        for activity in form.cleaned_data['activities']:
+            query.append(Q(activities__name=activity))
+
+        self.campgrounds = Campground.objects.filter(*filter(lambda item: item, query))
+
+        return self.render_to_response(self.get_context_data(form=form))

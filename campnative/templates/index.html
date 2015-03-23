@@ -21,7 +21,8 @@
         <div class="container">
             <div class="col-sm-12">
                 <div class="main clearfix">
-                    <form id="nl-form" class="nl-form">
+                    <form id="nl-form" class="nl-form" method="POST" action="{% url 'explore' %}">
+                        {% csrf_token %}
                         I feel to do
                         <select>
                             {% for activity in activities %}
